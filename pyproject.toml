@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "diamond-simkit"
+version = "0.1.0"
+description = "Minimal workflows for diamond and carbon atomistic simulations"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "diamond-simkit contributors" }]
+dependencies = [
+  "ase>=3.22",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+analysis = ["MDAnalysis>=2.4"]
+calorine = ["calorine"]
+ovito = ["ovito"]
+
+test = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+include = ["diamond_simkit*"]
